@@ -11,9 +11,9 @@
 
 此為 Windows 64-bit 環境底下一個 GUI 工具程式 <br />
 操作方式: 透過拖曳方式將以下三個項目從檔案總管拖曳到 Dialog 上: <br />
-Class names file: 類別名稱定義檔，一行表示一個類別名稱，支援中文(UTF8格式)，不支援空白字元，參考範例: dataset/Pothole.v1/name.txt <br />
-GT Image Folder: YOLOv8 影像資料夾，參考範例: dataset/Pothole.v1/train/images <br />
-GT Text Folder: YOLOv8 Ground Truth 標記檔案資料夾，參考範例: dataset/Pothole.v1/train/labels <br />
+* Class names file: 類別名稱定義檔，一行表示一個類別名稱，支援中文(UTF8格式)，不支援空白字元，參考範例: dataset/Pothole.v1/name.txt <br />
+* GT Image Folder: YOLOv8 影像資料夾，參考範例: dataset/Pothole.v1/train/images <br />
+* GT Text Folder: YOLOv8 Ground Truth 標記檔案資料夾，參考範例: dataset/Pothole.v1/train/labels <br />
 ![](./images/y8_gt_editor.jpg)
 
 ## 2.「YOLOv8_Tutorial」的副本 (Google Colab 環境)
