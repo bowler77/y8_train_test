@@ -14,6 +14,8 @@
 * Class names file: 類別名稱定義檔，一行表示一個類別名稱，支援中文(UTF8格式)，不支援空白字元，參考範例: dataset/Pothole.v1/name.txt <br />
 * GT Image Folder: YOLOv8 影像資料夾，參考範例: dataset/Pothole.v1/train/images <br />
 * GT Text Folder: YOLOv8 Ground Truth 標記檔案資料夾，參考範例: dataset/Pothole.v1/train/labels <br />
+
+然後點選 Open, 上下頁透過 PgUp, PgDn 按鍵，透過拖曳滑鼠方式新增物件，滑鼠右鍵(或Delete按鍵)移除物件，標記不同類別ID可以在物件上直接點選數字(1..9, 如果只有一個類別表示全為 1):
 ![](./images/y8_gt_editor.jpg)
 
 ## 2.「YOLOv8_Tutorial」的副本 (Google Colab 環境)
