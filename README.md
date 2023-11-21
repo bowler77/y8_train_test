@@ -1,11 +1,11 @@
 # y8_train_test
-## 提供 YOLOv8 物件偵測標註/訓練/測試等工具集
+## 提供YOLOv8物件偵測標註/訓練/測試等工具集
 
 包含幾個工具:
-1. 標註工具 - [y8_gt_editor](./binary) (Windows 環境底下標註工具)
-2. 訓練工具 - [「YOLOv8_Tutorial」的副本](./「YOLOv8_Tutorial」的副本.ipynb) (Google Colab 環境)
-3. 偵測工具 - [y8_detect](./binary) (Windows 環境底下偵測工具)
-4. 同時檢視偵測結果與編輯GT - [y8_detect_gt](./binary) (Windows 環境底下同時顯示偵測結果與標註工具)
+1. 標註工具 - [y8_gt_editor](./binary) (Windows環境底下標註工具)
+2. 訓練工具 - [「YOLOv8_Tutorial」的副本](./「YOLOv8_Tutorial」的副本.ipynb) (Google Colab環境)
+3. 偵測工具 - [y8_detect](./binary) (Windows環境底下偵測工具)
+4. 同時檢視偵測結果與編輯GT - [y8_detect_gt](./binary) (Windows環境底下同時顯示偵測結果與標註工具)
 
 ## 1. 標註工具 - [y8_gt_editor](./binary)
 
