@@ -25,10 +25,14 @@
 步驟1: 掛載Google雲端硬碟
 步驟2: 將影像資料從Google雲端硬碟複製到Colab
 步驟3: Setup建置訓練環境
-步驟4：開始訓練模型
+步驟4: 開始訓練模型
 步驟5: 將訓練好的模型(best.pt)模型複製到Google雲端硬碟
 步驟6: 將訓練好的模型(best.pt)轉成其他格式(best.onnx)
+步驟7: 使用程式碼方式(Python/ONNX/OpenCV)進行預測與顯示物件偵測結果
 ```
+
+經過以上步驟1-7執行後可以得到以下偵測結果(步驟7產生): <br />
+![](./images/detect_result.jpg)
 
 ## 3. 偵測工具 - [y8_detect](./binary)
 
