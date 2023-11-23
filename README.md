@@ -7,16 +7,16 @@
 3. 偵測工具 - [y8_detect](./binary) (Windows環境底下偵測工具)
 4. 同時檢視偵測結果與編輯GT - [y8_detect_gt](./binary) (Windows環境底下同時顯示偵測結果與標註工具)
 
-與一個範例資料集(一個類別):
+與一個範例資料集(一個類別物件):
 * [dataset/custom](./dataset/custom)
   - [custom.yaml](./dataset/custom/custom.yaml)檔案
-  - [train](./dataset/custom/train): 465張影像
+  - [train](./dataset/custom/train): 包含465張影像
     - [images](./dataset/custom/train/images)資料夾(465個.jpg檔)
     - [labels](./dataset/custom/train/labels)資料夾(465個.txt檔)
-  - [valid](./dataset/custom/valid): 133張影像
+  - [valid](./dataset/custom/valid): 包含133張影像
     - [images](./dataset/custom/valid/images)資料夾(133個.jpg檔)
     - [labels](./dataset/custom/valid/labels)資料夾(133個.txt檔)
-  - [test](./dataset/custom/test): 67張影像
+  - [test](./dataset/custom/test): 包含67張影像
     - [images](./dataset/custom/test/images)資料夾(67個.jpg檔)
     - [labels](./dataset/custom/test/labels)資料夾(67個.txt檔)
 
@@ -44,6 +44,51 @@
 步驟5: 將訓練好的模型(best.pt)模型複製到Google雲端硬碟
 步驟6: 將訓練好的模型(best.pt)轉成其他格式(best.onnx)
 步驟7: 使用程式碼方式(Python/ONNX/OpenCV)進行預測與顯示物件偵測結果
+```
+
+### 步驟1: 掛載Google雲端硬碟
+```
+from google.colab import drive
+drive.mount('/content/drive')
+```
+### 步驟2: 將影像資料從Google雲端硬碟複製到Colab
+```
+!mkdir datasets
+!cp drive/MyDrive/custom/custom.yaml .
+!cp -r drive/MyDrive/custom/train datasets/
+!cp -r drive/MyDrive/custom/valid datasets/
+!cp -r drive/MyDrive/custom/test datasets/
+```
+### 步驟3: Setup建置訓練環境
+```
+%pip install ultralytics
+import ultralytics
+ultralytics.checks()
+```
+### 步驟4: 開始訓練模型
+```
+# Train YOLOv8n on custom dataset for 40 epochs
+!yolo task=detect mode=train model=yolov8n.pt data=custom.yaml epochs=40 close_mosaic=20 lr0=0.01 weight_decay=0.0005 warmup_epochs=3.0 imgsz=640 batch=16 name=yolov8n_custom exist_ok=True
+```
+### 步驟5: 將訓練好的模型(best.pt)模型複製到Google雲端硬碟
+```
+!cp runs/detect/yolov8n_custom/weights/best.pt drive/MyDrive/custom
+```
+### 步驟6: 將訓練好的模型(best.pt)轉成其他格式(best.onnx)
+```
+!yolo export model=drive/MyDrive/custom/best.pt format=onnx
+```
+### 步驟7: 使用程式碼方式(Python/ONNX/OpenCV)進行預測與顯示物件偵測結果
+```
+...
+```
+### Predict command line方式
+```
+!yolo predict model=runs/detect/yolov8n_custom/weights/best.pt source=datasets/test/images/img-344_jpg.rf.dd4eebb8836b8efe2a2cce77d61349b7.jpg show=True save=True conf=0.1
+import cv2
+from google.colab.patches import cv2_imshow
+img = cv2.imread('runs/detect/predict/img-344_jpg.rf.dd4eebb8836b8efe2a2cce77d61349b7.jpg')
+cv2_imshow(img)
 ```
 
 經過以上步驟1-7執行後可以得到以下偵測結果(步驟7產生): <br />
