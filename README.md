@@ -9,16 +9,16 @@
 
 與一個範例資料集(一個類別):
 * [dataset/custom](./dataset/custom)
-** [custom.yaml](./dataset/custom/custom.yaml)檔案
-** [train](./dataset/custom/train): 465張影像
-*** [images](./dataset/custom/train/images)資料夾(465個.jpg檔)
-*** [labels](./dataset/custom/train/labels)資料夾(465個.txt檔)
-** [valid](./dataset/custom/valid): 133張影像
-*** [images](./dataset/custom/valid/images)資料夾(133個.jpg檔)
-*** [labels](./dataset/custom/valid/labels)資料夾(133個.txt檔)
-** [test](./dataset/custom/test): 67張影像
-*** [images](./dataset/custom/test/images)資料夾(67個.jpg檔)
-*** [labels](./dataset/custom/test/labels)資料夾(67個.txt檔)
+  - [custom.yaml](./dataset/custom/custom.yaml)檔案
+  - [train](./dataset/custom/train): 465張影像
+    - [images](./dataset/custom/train/images)資料夾(465個.jpg檔)
+    - [labels](./dataset/custom/train/labels)資料夾(465個.txt檔)
+  - [valid](./dataset/custom/valid): 133張影像
+    - [images](./dataset/custom/valid/images)資料夾(133個.jpg檔)
+    - [labels](./dataset/custom/valid/labels)資料夾(133個.txt檔)
+  - [test](./dataset/custom/test): 67張影像
+    - [images](./dataset/custom/test/images)資料夾(67個.jpg檔)
+    - [labels](./dataset/custom/test/labels)資料夾(67個.txt檔)
 
 ![custom.yaml](./images/custom.yaml.jpg)
 
