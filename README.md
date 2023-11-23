@@ -1,11 +1,26 @@
 # y8_train_test
 ## 提供YOLOv8物件偵測標註/訓練/測試等工具集
 
-包含幾個工具:
+包含四個工具:
 1. 標註工具 - [y8_gt_editor](./binary) (Windows環境底下標註工具)
 2. 訓練工具 - [「YOLOv8_Tutorial」的副本](./「YOLOv8_Tutorial」的副本.ipynb) (Google Colab環境)
 3. 偵測工具 - [y8_detect](./binary) (Windows環境底下偵測工具)
 4. 同時檢視偵測結果與編輯GT - [y8_detect_gt](./binary) (Windows環境底下同時顯示偵測結果與標註工具)
+
+與一個範例資料集(一個類別):
+* [dataset/custom](./dataset/custom)
+** [custom.yaml](./dataset/custom/custom.yaml)檔案
+** [train](./dataset/custom/train): 465張影像
+*** [images](./dataset/custom/train/images)資料夾(465個.jpg檔)
+*** [labels](./dataset/custom/train/labels)資料夾(465個.txt檔)
+** [valid](./dataset/custom/valid): 133張影像
+*** [images](./dataset/custom/valid/images)資料夾(133個.jpg檔)
+*** [labels](./dataset/custom/valid/labels)資料夾(133個.txt檔)
+** [test](./dataset/custom/test): 67張影像
+*** [images](./dataset/custom/test/images)資料夾(67個.jpg檔)
+*** [labels](./dataset/custom/test/labels)資料夾(67個.txt檔)
+
+![custom.yaml](./images/custom.yaml.jpg)
 
 ## 1. 標註工具 - [y8_gt_editor](./binary)
 
@@ -32,7 +47,7 @@
 ```
 
 經過以上步驟1-7執行後可以得到以下偵測結果(步驟7產生): <br />
-![](./images/detect_result.jpg)
+![detect_result](./images/detect_result.jpg)
 
 ## 3. 偵測工具 - [y8_detect](./binary)
 
@@ -44,7 +59,7 @@
 * Images (folder/image/video file): 測試影像(或影片)資料夾，參考範例: [dataset/custom/test/images](./dataset/custom/test/images) <br />
 
 然後點選Open, 瀏覽上下頁透過PgUp, PgDn按鍵，可以設定偵測門檻值(th, 範圍 0..1 間，門檻值愈高誤報愈少，偵測率愈低，反之門檻值愈低誤報愈多，偵測率愈高):
-![](./images/y8_detect.jpg)
+![y8_detect](./images/y8_detect.jpg)
 
 ## 4. 同時檢視偵測結果與編輯GT - [y8_detect_gt](./binary)
 
@@ -57,4 +72,4 @@
 * GT Labels Folder: YOLOv8格式Ground Truth標記檔案資料夾(一張影像檔對應一個文字檔)，參考範例: [dataset/custom/test/labels](./dataset/custom/test/labels) <br />
 
 然後點選Open, 瀏覽上下頁透過PgUp, PgDn按鍵，可以設定偵測門檻值(th, 範圍 0..1 間，門檻值愈高誤報愈少，偵測率愈低)調整偵測結果(左邊藍色物件框)，與編輯右邊Ground Truth物件(右邊綠色物件框)，點選左邊藍色物件框會自動生成右邊綠色 GT 框:
-![](./images/y8_detect_gt.jpg)
+![y8_detect_gt](./images/y8_detect_gt.jpg)
