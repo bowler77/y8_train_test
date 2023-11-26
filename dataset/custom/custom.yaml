@@ -1,9 +1,9 @@
 train: train/images
 val: valid/images
-test: test/images
 
-nc: 1
-names: ['pothole']
+# Classes
+nc: 4 # number of classes
+names: ['Pothole', 'Orange', 'Apple', 'Banana'] # class names
 
 roboflow:
   workspace: brad-dwyer
