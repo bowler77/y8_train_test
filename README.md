@@ -28,7 +28,7 @@
 * GT Images Folder: YOLOv8格式影像資料夾，參考範例: [dataset/custom/train/images](./dataset/custom/train/images) <br />
 * GT Labels Folder: YOLOv8格式Ground Truth標記檔案資料夾(一張影像檔對應一個文字檔)，參考範例: [dataset/custom/train/labels](./dataset/custom/train/labels) <br />
 
-然後點選Open, 瀏覽上下頁透過PgUp, PgDn按鍵，新增物件透過拖曳滑鼠方式(綠色框)，滑鼠右鍵(或Delete按鍵)移除物件，標記不同類別ID可以在物件上直接按數字按鍵(1..9, 如果只有一個類別物件表示全為 1):
+然後點選Open, 瀏覽上下頁透過PgUp, PgDn按鍵，新增物件透過拖曳滑鼠方式(綠色框)，滑鼠右鍵(或Delete按鍵)移除物件，標記不同類別ID可以在物件上直接按數字按鍵(1..9, 如果只有一個類別物件表示全為 1)或是點選上方不同類別後再行拖曳新增物件:
 ![](./images/y8_gt_editor.jpg)
 
 ## 2. 訓練工具 - [「YOLOv8_Tutorial」的副本](./「YOLOv8_Tutorial」的副本.ipynb) (Google Colab 環境)
@@ -110,7 +110,7 @@ cv2_imshow(img)
 * YOLOv8 detection model (onnx format): ONNX格式模型檔，參考範例: [dataset/custom/best.onnx](./dataset/custom/best.onnx) <br />
 * Class names file: 類別名稱定義檔(文字檔)，每一行表示一個類別名稱，支援中文(UTF8格式)，參考範例: [dataset/custom/name.txt](./dataset/custom/name.txt) <br />
 * Images (folder/image/video file): 測試影像(或影片)資料夾，參考範例: [dataset/custom/test/images](./dataset/custom/test/images) <br />
-* GT Images Folder: YOLOv8格式影像資料夾(可以與以上Images 欄位使用相同資料夾)，參考範例: [dataset/custom/test/images](./dataset/custom/test/images) <br />
+* GT Images Folder: YOLOv8格式影像資料夾(可以與上一個Images 欄位使用相同資料夾)，參考範例: [dataset/custom/test/images](./dataset/custom/test/images) <br />
 * GT Labels Folder: YOLOv8格式Ground Truth標記檔案資料夾(一張影像檔對應一個文字檔)，參考範例: [dataset/custom/test/labels](./dataset/custom/test/labels) <br />
 
 然後點選Open, 瀏覽上下頁透過PgUp, PgDn按鍵，可以設定偵測門檻值(th, 範圍 0..1 間，門檻值愈高誤報愈少，偵測率愈低)調整偵測結果(左邊藍色物件框)，與編輯右邊Ground Truth物件(右邊綠色物件框)，點選左邊藍色物件框會自動生成右邊綠色 GT 框:
